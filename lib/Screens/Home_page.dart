@@ -8,14 +8,14 @@ import 'package:staffapp/Widgets/ui_tile.dart';
 class TilesPage extends StatefulWidget {
   static const routeName = '/tiles';  // <-- give it a routeName
 
-  const TilesPage({Key? key}) : super(key: key);
+  const TilesPage({super.key});
 
   @override
   _TilesPageState createState() => _TilesPageState();
 }
 
 class _TilesPageState extends State<TilesPage> {
-  bool _initializing = false;
+  final bool _initializing = false;
   int _currentIndex = 0;
 
   @override
@@ -59,6 +59,14 @@ class _TilesPageState extends State<TilesPage> {
                           'Zoho',
                           'www.Zoho.com',
                         ),
+
+                          UiTile(
+                          'assets/images/bible_plus.jpg',
+                          'Zoho',
+                          'www.Zoho.com',
+                        ),
+
+                        
                         
                         // add more tiles here...
                       ],

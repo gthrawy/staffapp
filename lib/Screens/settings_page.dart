@@ -7,7 +7,7 @@ import 'package:staffapp/Widgets/Nav_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   static const routeName = '/settings';
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,7 @@ class SettingsPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         children: [
           SwitchListTile(
+            // create a switch to toggle dark mode for the text
             title: const Text('Dark Mode'),
             value: themeProvider.isDarkMode,
             onChanged: (val) => themeProvider.toggleTheme(val),
