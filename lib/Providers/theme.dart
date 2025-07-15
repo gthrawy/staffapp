@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // 1️⃣ Define your primary palette
-  static const Color _primaryColor = Color(0xFF00695C);
-  static const Color _secondaryColor = Color(0xFFFFC107);
+  // 1️ Define your primary palette
+  static const Color _mainColor = Colors.blue;
+  static const Color _secondaryColor = Colors.red;
 
-  // 2️⃣ Build a light theme
+  // 2️ Build a light theme
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: _primaryColor,
+    primaryColor: _mainColor,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: _primaryColor,
+      seedColor: _mainColor,
       secondary: _secondaryColor,
       brightness: Brightness.light,
     ),
     scaffoldBackgroundColor: Colors.grey[50],
     cardColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      backgroundColor: _primaryColor,
+      backgroundColor: _mainColor,
       foregroundColor: Colors.white,
     ),
     // Customize switches, buttons, text, etc.:
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all(_secondaryColor),
-      trackColor: MaterialStateProperty.all(_secondaryColor.withOpacity(0.5)),
+      thumbColor: WidgetStateProperty.all(_secondaryColor),
+      // ignore: deprecated_member_use
+      trackColor: WidgetStateProperty.all(_secondaryColor.withOpacity(0.5)),
     ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.black87),
@@ -31,21 +32,21 @@ class AppTheme {
     ),
   );
 
-  // 3️⃣ (Optional) a dark theme
+  // 3️ a dark theme
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: _primaryColor,
+    primaryColor: _mainColor,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: _primaryColor,
+      seedColor: _mainColor,
       secondary: _secondaryColor,
       brightness: Brightness.dark,
     ),
-    scaffoldBackgroundColor: Colors.black,
-    cardColor: Colors.grey[800],
+    scaffoldBackgroundColor: const Color.fromARGB(255, 58, 51, 51),
+    cardColor: const Color.fromARGB(255, 11, 11, 41),
     appBarTheme: const AppBarTheme(
-      backgroundColor: _primaryColor,
+      backgroundColor: _mainColor,
       foregroundColor: Colors.white,
     ),
-    // ... etc
+
   );
 }

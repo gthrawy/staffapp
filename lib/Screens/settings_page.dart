@@ -7,7 +7,7 @@ import 'package:staffapp/Widgets/Nav_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   static const routeName = '/settings';
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

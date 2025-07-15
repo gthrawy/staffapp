@@ -10,8 +10,8 @@ class UiTile extends StatelessWidget {
     this.imagePath,
     this.tileDesc,
     this.url, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   Future<void> _launchURL(BuildContext context) async {
     // Ensure URL has a valid scheme
@@ -64,12 +64,12 @@ class UiTile extends StatelessWidget {
           ),
           width: tileWidth,
           height: tileWidth * 1.3, // constrain total height
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(12),
           child: Column(
             children: [
               // Image section
               Expanded(
-                flex: 6,
+               flex: 5,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
@@ -93,7 +93,7 @@ class UiTile extends StatelessWidget {
                       color: Colors.blue,
                       fontFamily: 'PlayfairDisplay',
                       fontWeight: FontWeight.w700,
-                      fontSize: 22,
+                      fontSize: 16,
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -104,23 +104,23 @@ class UiTile extends StatelessWidget {
               const SizedBox(height: 4),
 
               // URL link
-              Expanded(
-                flex: 1,
-                child: GestureDetector(
-                  onTap: () => _launchURL(context),
-                  child: Text(
-                    url,
-                    style: TextStyle(
-                      color:Colors.blue,
-                      decoration: TextDecoration.underline,
-                      fontSize: 12,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
+              // Expanded(
+              //   flex: 1,
+              //   child: GestureDetector(
+              //     onTap: () => _launchURL(context),
+              //     child: Text(
+              //       url,
+              //       style: TextStyle(
+              //         color:Colors.blue,
+              //         decoration: TextDecoration.underline,
+              //         fontSize: 12,
+              //       ),
+              //       textAlign: TextAlign.center,
+              //       maxLines: 1,
+              //       overflow: TextOverflow.ellipsis,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -128,7 +128,3 @@ class UiTile extends StatelessWidget {
     );
   }
 }
-
-// pubspec.yaml:
-// dependencies:
-//   url_launcher: ^6.1.5
