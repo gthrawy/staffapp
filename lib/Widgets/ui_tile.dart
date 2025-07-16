@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UiTile extends StatelessWidget {
-  final String imagePath;
-  final String tileDesc;
+  final String iconPath;
+  final String title;
   final String url;
+  final VoidCallback? onTap; // Optional callback for additional actions
 
   const UiTile(
-    this.imagePath,
-    this.tileDesc,
+    this.iconPath,
+    this.title,
     this.url, {
-    super.key,
-  });
+    this.onTap,
+    Key? key,
+  }) : super(key: key);
 
   Future<void> _launchURL(BuildContext context) async {
-    // Ensure URL has a valid scheme
+    // URL valid scheme
     String link = url;
     if (!link.startsWith(RegExp(r'https?://'))) {
       link = 'https://$link';
@@ -58,22 +60,22 @@ class UiTile extends StatelessWidget {
               BoxShadow(
                 blurRadius: 4,
                 color: Theme.of(context).shadowColor,
-                offset: const Offset(3, 3),
+                offset: const Offset(2, 3),
               ),
             ],
           ),
           width: tileWidth,
-          height: tileWidth * 1.3, // constrain total height
+          height: tileWidth * 6, // constrain total height
           padding: const EdgeInsets.all(12),
           child: Column(
             children: [
               // Image section
               Expanded(
-               flex: 5,
+               flex: 8,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(18.0),
                   child: Image.asset(
-                    imagePath,
+                    iconPath,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -87,13 +89,13 @@ class UiTile extends StatelessWidget {
                 flex: 2,
                 child: Center(
                   child: Text(
-                    tileDesc,
+                    title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.blue,
-                      fontFamily: 'PlayfairDisplay',
+                      fontFamily: 'Trajan Pro',
                       fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                      fontSize: 12,
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // 1️ Define your primary palette
-  static const Color _mainColor = Colors.blue;
-  static const Color _secondaryColor = Colors.red;
+  static const Color _mainColor = Color.fromARGB(255, 3, 81, 218);
+  static const Color _secondaryColor = Color.fromARGB(255, 235, 40, 6);
 
   // 2️ Build a light theme
   static final ThemeData lightTheme = ThemeData(
@@ -41,11 +41,11 @@ class AppTheme {
       secondary: _secondaryColor,
       brightness: Brightness.dark,
     ),
-    scaffoldBackgroundColor: const Color.fromARGB(255, 58, 51, 51),
-    cardColor: const Color.fromARGB(255, 11, 11, 41),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
+    cardColor: const Color.fromARGB(255, 29, 29, 72),
     appBarTheme: const AppBarTheme(
       backgroundColor: _mainColor,
-      foregroundColor: Colors.white,
+      foregroundColor: Color.fromARGB(255, 255, 255, 255),
     ),
 
   );

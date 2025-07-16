@@ -5,6 +5,7 @@ import 'package:staffapp/Providers/theme.dart';
 import 'package:staffapp/Providers/theme_provider.dart';
 
 import 'package:staffapp/Screens/Home_page.dart';
+import 'package:staffapp/Screens/Website.dart';
 import 'package:staffapp/Screens/settings_page.dart';
 
 
@@ -31,8 +32,11 @@ class MyApp extends StatelessWidget {
       themeMode: themeProvider.themeMode,
       initialRoute: TilesPage.routeName,
       routes: {
+         MyWebsitePage.routeName: (_) => const MyWebsitePage(title: '',url: '',),
         TilesPage.routeName: (_) => const TilesPage(),
         SettingsPage.routeName: (_) => const SettingsPage(),
+        // MyWebsitePage.routeName: (_) => const MyWebsitePage(),
+       
       },
     );
   }

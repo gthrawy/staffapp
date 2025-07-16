@@ -12,7 +12,7 @@ class CustomNavBar extends StatelessWidget {
       onTap: onTap,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.apps_outlined), label: 'Apps'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+        BottomNavigationBarItem(icon: Icon(Icons.add_circle_sharp), label: 'Website'),
       ],
     );
   }
