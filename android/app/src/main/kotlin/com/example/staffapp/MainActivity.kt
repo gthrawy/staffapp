@@ -1,4 +1,4 @@
-package com.example.staffapp
+package com.envtech.staffapp
 
 import io.flutter.embedding.android.FlutterActivity
 

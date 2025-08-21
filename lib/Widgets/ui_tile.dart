@@ -2,21 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UiTile extends StatelessWidget {
-  final String iconPath;
-  final String title;
+  final String imagePath;
+  final String tileDesc;
   final String url;
-  final VoidCallback? onTap; // Optional callback for additional actions
+  final VoidCallback? onTap;
 
-  const UiTile(
-    this.iconPath,
-    this.title,
-    this.url, {
-    this.onTap,
-    Key? key,
-  }) : super(key: key);
+  const UiTile(this.imagePath, this.tileDesc, this.url, {this.onTap, Key? key})
+    : super(key: key);
 
   Future<void> _launchURL(BuildContext context) async {
-    // URL valid scheme
+    // Ensure URL has a valid scheme
     String link = url;
     if (!link.startsWith(RegExp(r'https?://'))) {
       link = 'https://$link';
@@ -24,16 +19,16 @@ class UiTile extends StatelessWidget {
 
     final uri = Uri.tryParse(link);
     if (uri == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Invalid URL: $url')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Invalid URL: $url')));
       return;
     }
 
     if (!await canLaunchUrl(uri)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Could not launch $link')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Could not launch $link')));
       return;
     }
 
@@ -49,7 +44,7 @@ class UiTile extends StatelessWidget {
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       child: InkWell(
-        onTap: () => _launchURL(context),
+        onTap: onTap ?? () => _launchURL(context),
         borderRadius: BorderRadius.circular(20),
         child: Ink(
           decoration: BoxDecoration(
@@ -60,22 +55,22 @@ class UiTile extends StatelessWidget {
               BoxShadow(
                 blurRadius: 4,
                 color: Theme.of(context).shadowColor,
-                offset: const Offset(2, 3),
+                offset: const Offset(3, 3),
               ),
             ],
           ),
           width: tileWidth,
-          height: tileWidth * 6, // constrain total height
-          padding: const EdgeInsets.all(12),
+          height: tileWidth * 1.3, // constrain total height
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               // Image section
               Expanded(
-               flex: 8,
+                flex: 6,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18.0),
+                  borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    iconPath,
+                    imagePath,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -89,13 +84,13 @@ class UiTile extends StatelessWidget {
                 flex: 2,
                 child: Center(
                   child: Text(
-                    title,
+                    tileDesc,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.blue,
-                      fontFamily: 'Trajan Pro',
+                      fontFamily: 'PlayfairDisplay',
                       fontWeight: FontWeight.w700,
-                      fontSize: 12,
+                      fontSize: 16,
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

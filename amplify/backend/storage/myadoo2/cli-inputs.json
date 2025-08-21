@@ -1,0 +1,15 @@
+{
+  "resourceName": "myadoo2",
+  "policyUUID": "fec285e4",
+  "bucketName": "staffappffc883de8a654438afe366aca812d962",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "S3Trigger519cb557",
+  "groupAccess": {}
+}
