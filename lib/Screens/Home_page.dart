@@ -4,7 +4,6 @@ import 'package:staffapp/Widgets/App_bar.dart';
 import 'package:staffapp/Widgets/Nav_bar.dart';
 import 'package:staffapp/Widgets/ui_tile.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:staffapp/Screens/password_gate.dart';
 
 class TilesPage extends StatefulWidget {
@@ -20,7 +19,7 @@ class TilesPage extends StatefulWidget {
 class _TilesPageState extends State<TilesPage> {
   int _currentIndex = 0;
 
-  /// Signs the user out of Amplify and returns to the login flow.
+  /// Signs the user out of Amplify and returns to the login pg
   Future<void> _signOut() async {
     try {
       await Amplify.Auth.signOut();
@@ -62,83 +61,26 @@ class _TilesPageState extends State<TilesPage> {
                 'assets/images/Canva-logo.webp',
                 'Canva',
                 'https://www.canva.com',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Canva',
-                        url: 'https://www.canva.com',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/calendar-logo.webp',
                 'Calendar',
                 'https://calendar.google.com/calendar/u/0/r',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Calendar',
-                        url: 'https://calendar.google.com/calendar/u/0/r',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/drive logo.png',
                 'Drive',
                 'https://drive.google.com/drive/folders/0B--ZoBdvtaJxMUY0dlFkWVBSZnc',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Drive',
-                        url:
-                            'https://drive.google.com/drive/folders/0B--ZoBdvtaJxMUY0dlFkWVBSZnc',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/google_photo_logo_icon.webp',
                 'Photos',
                 'https://drive.google.com/drive/folders/0B--ZoBdvtaJxMUY0dlFkWVBSZnc',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Photos',
-                        url:
-                            'https://drive.google.com/drive/folders/0B--ZoBdvtaJxMUY0dlFkWVBSZnc',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/Slack_icon_logo.webp',
                 'Slack',
                 'https://slack.com/signin#/signin',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Slack',
-                        url: 'https://slack.com/signin#/signin',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/receipts_submission.webp',
@@ -236,34 +178,11 @@ class _TilesPageState extends State<TilesPage> {
                 'assets/images/images (1).jpeg',
                 'Grant Advance',
                 'https://platform.grantadvance.com/',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Grant Advance',
-                        url: 'https://platform.grantadvance.com/',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/0x0.png',
                 'Paychex',
                 'https://myapps.paychex.com/landing_remote/login.do?lang=en',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Paychex',
-                        url:
-                            'https://myapps.paychex.com/landing_remote/login.do?lang=en',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/quickbooks-online-gocanvas-integration-2.webp',
@@ -311,101 +230,31 @@ class _TilesPageState extends State<TilesPage> {
                 'assets/images/UniFi.webp',
                 'UniFi',
                 'https://unifi.ui.com/',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'UniFi',
-                        url: 'https://unifi.ui.com/',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/images.png',
                 'Wix.com',
                 'https://manage.wix.com/dashboard/dae7e9a4-40d9-4e1f-bfe0-312b929bb5f9/home',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Wix.com',
-                        url:
-                            'https://manage.wix.com/dashboard/dae7e9a4-40d9-4e1f-bfe0-312b929bb5f9/home',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/Wyze_logo.png',
                 'Wyze',
                 'https://my.wyze.com/live',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Wyze',
-                        url: 'https://my.wyze.com/live',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/tickets.jpg',
                 'Tickets',
                 'https://envisioncleveland.zohodesk.com/portal/en/newticket',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Tickets',
-                        url:
-                            'https://envisioncleveland.zohodesk.com/portal/en/newticket',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/Zoho_vault.png',
                 'Vault',
                 'https://accounts.zoho.com/signin?servicename=ZohoVault&signupurl=https://www.zoho.com/vault/signup.html&serviceurl=https://vault.zoho.com',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Vault',
-                        url:
-                            'https://accounts.zoho.com/signin?servicename=ZohoVault&signupurl=https://www.zoho.com/vault/signup.html&serviceurl=https://vault.zoho.com',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/filestorage_logo.jpeg',
                 'Synology',
                 'http://192.168.0.64:5000/?launchApp=SYNO.SDS.Drive.BasicInstance&launchParam=link%3D13znW0A26KU7BJHfsU6o9yOXpe0uAVcw#/signin',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Synology',
-                        url:
-                            'http://192.168.0.64:5000/?launchApp=SYNO.SDS.Drive.BasicInstance&launchParam=link%3D13znW0A26KU7BJHfsU6o9yOXpe0uAVcw#/signin',
-                      ),
-                    ),
-                  );
-                },
               ),
             ],
           ),
@@ -437,70 +286,26 @@ class _TilesPageState extends State<TilesPage> {
                 'assets/images/images (1).png',
                 'Jotform',
                 'https://www.jotform.com/myforms/',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Jotform',
-                        url: 'https://www.jotform.com/myforms/',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/Protect_Minstry.png',
                 'Ministry Mobilizer',
                 'https://www.mobilizemyministry.com/login/Account/Login',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Ministry Mobilizer',
-                        url:
-                            'https://www.mobilizemyministry.com/login/Account/Login',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/Mailchimp-logo-freelance-stack.png',
                 'Chimp',
                 'https://mailchimp.com/',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Chimp',
-                        url: 'https://mailchimp.com/',
-                      ),
-                    ),
-                  );
-                },
               ),
               UiTile(
                 'assets/images/volunteeer_service.jpg',
                 'Volunteer Service',
                 'https://creatorapp.zohopublic.com/envisioncle/envision-cleveland/form-perma/Volunteer_Service/z7ffrC1bW0kj0aN7ZjtPqBgDNPdsZxjaOZaaGvAAPuke0dZsu1pXb6VRjnpQkxgKeZ2eDjHZZnQPjCu5ESHmw7DBjHAzRF6CHF8Y',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MyWebsitePage(
-                        title: 'Volunteer Service',
-                        url:
-                            'https://creatorapp.zohopublic.com/envisioncle/envision-cleveland/form-perma/Volunteer_Service/z7ffrC1bW0kj0aN7ZjtPqBgDNPdsZxjaOZaaGvAAPuke0dZsu1pXb6VRjnpQkxgKeZ2eDjHZZnQPjCu5ESHmw7DBjHAzRF6CHF8Y',
-                      ),
-                    ),
-                  );
-                },
               ),
             ],
           ),
+
+          const SizedBox(height: 30),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
